@@ -1,0 +1,32 @@
+[
+  {
+    "id": "IAISMP",
+    "name": "IAISMP All Mining Titles",
+    "url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/all",
+    "authority": "Ministry of Mines and Steel Development"
+  },
+  {
+    "id": "NMCO",
+    "name": "NMCO Publications",
+    "url": "https://www.miningcadastre.gov.ng/publication",
+    "authority": "Nigeria Mining Cadastre Office"
+  },
+  {
+    "id": "NGSA_DB",
+    "name": "NGSA National Mineral Occurrence Database",
+    "url": "https://ngsa.gov.ng/database/",
+    "authority": "Nigeria Geological Survey Agency"
+  },
+  {
+    "id": "NGSA_NMRDSS",
+    "name": "NGSA NMRDSS",
+    "url": "https://ngsa.gov.ng/decision-support-system/",
+    "authority": "Nigeria Geological Survey Agency"
+  },
+  {
+    "id": "NGSA_GEO",
+    "name": "NGSA GeoData Centre",
+    "url": "https://ngsa.gov.ng/geodata-centre/",
+    "authority": "Nigeria Geological Survey Agency"
+  }
+]

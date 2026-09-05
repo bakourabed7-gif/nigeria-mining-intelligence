@@ -1,0 +1,165 @@
+[
+  {
+    "id": "18011",
+    "licence_no": "ML 32275",
+    "title_type": "Mining Lease",
+    "state": "Kogi",
+    "lga": "Kabba/Bunu",
+    "status": "active",
+    "area_m2": 14000,
+    "operator": "Mining For New Generation International Ltd",
+    "commodities": [
+      "Gold",
+      "Copper"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/18011",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "10399",
+    "licence_no": "ML 24884",
+    "title_type": "Mining Lease",
+    "state": "Kogi",
+    "lga": "Omala",
+    "status": "active",
+    "area_m2": 9952835,
+    "operator": "MOSRA ENERJI Limited",
+    "commodities": [
+      "Coal"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/10399",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "9108",
+    "licence_no": "ML 18046",
+    "title_type": "Mining Lease",
+    "state": "Nasarawa",
+    "lga": "Nasarawa",
+    "status": "active",
+    "area_m2": 52640830,
+    "operator": "West African Polaris Investments LTD",
+    "commodities": [
+      "Tin",
+      "Beryl",
+      "Feldspar",
+      "Lepidolite",
+      "Rubidium",
+      "Tantalum"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/9108",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "1194",
+    "licence_no": "ML 19014",
+    "title_type": "Mining Lease",
+    "state": "Kogi",
+    "lga": "Ankpa",
+    "status": "active",
+    "area_m2": 29457167,
+    "operator": "Dangote Industries Limited",
+    "commodities": [
+      "Clay",
+      "Coal"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/1194",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "7896",
+    "licence_no": "ML 17471",
+    "title_type": "Mining Lease",
+    "state": "Zamfara",
+    "lga": "Anka",
+    "status": "active",
+    "area_m2": 38568178,
+    "operator": "Ohil - Global Mining Company Limited",
+    "commodities": [
+      "Gold",
+      "Copper",
+      "Manganese",
+      "Silver",
+      "Lead"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/7896",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "2678",
+    "licence_no": "ML 19327",
+    "title_type": "Mining Lease",
+    "state": "Kogi",
+    "lga": "Yagba East",
+    "status": "active",
+    "area_m2": 44472772,
+    "operator": "North-South Extractive Company Limited",
+    "commodities": [
+      "Gold",
+      "Cassiterite",
+      "Silver",
+      "Talc",
+      "Lead"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/2678",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "1086",
+    "licence_no": "Licence 246",
+    "title_type": "Mining Lease",
+    "state": "Plateau",
+    "lga": "Bokkos",
+    "status": "active",
+    "area_m2": 1685899,
+    "operator": "Consolidated Tin Mines Limited",
+    "commodities": [
+      "Tin",
+      "Columbite"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/1086",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "9139",
+    "licence_no": "Licence 7",
+    "title_type": "Mining Lease",
+    "state": "Osun",
+    "lga": "Atakumosa West",
+    "status": "active",
+    "area_m2": 11654652,
+    "operator": "Omoluabi Mineral Promotion Company Limited",
+    "commodities": [
+      "Gold"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/9139",
+    "verified_at": "2026-09-04"
+  },
+  {
+    "id": "12981",
+    "licence_no": "Licence 30692",
+    "title_type": "Small Scale Mining Lease",
+    "state": "Kwara",
+    "lga": "Moro",
+    "status": "expired",
+    "area_m2": 3000,
+    "operator": "Aisas Mining Limited",
+    "commodities": [
+      "Gold",
+      "Ilmenite",
+      "Manganese",
+      "Tantalum"
+    ],
+    "source": "IAISMP",
+    "source_url": "https://portal.minesandsteel.gov.ng/MarketPlace/MiningTitle/Details/12981",
+    "verified_at": "2026-09-04"
+  }
+]

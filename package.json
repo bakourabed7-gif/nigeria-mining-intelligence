@@ -1,0 +1,11 @@
+{
+  "name": "nigeria-mining-intelligence",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Source-aware Nigerian mining title intelligence for investors and researchers.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate:data": "node scripts/validate-data.js"
+  }
+}
