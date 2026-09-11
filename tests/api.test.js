@@ -17,6 +17,7 @@ test('health endpoint is public', async () => {
   await handler({ method: 'GET', query: { path: 'health' }, headers: {}, socket: {} }, res);
   assert.equal(res.statusCode, 200);
   assert.equal(res.body.ok, true);
+  assert.equal(res.headers['Cache-Control'], 'no-store, private');
 });
 
 test('mining dashboard requires a secure authenticated session', async () => {

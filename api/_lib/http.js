@@ -30,7 +30,10 @@ function configureResponse(req, res) {
   res.setHeader('X-Request-Id', requestId);
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Cache-Control', req.method === 'GET' ? 'public, max-age=0, s-maxage=300, stale-while-revalidate=600' : 'no-store');
+  // This handler also serves authenticated, user-specific and admin data.  Never
+  // allow a shared edge cache to replay an old (or another user's) API response.
+  // Static assets are served outside this handler and can still be cached normally.
+  res.setHeader('Cache-Control', 'no-store, private');
   return requestId;
 }
 
