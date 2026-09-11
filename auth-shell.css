@@ -1,0 +1,2 @@
+/* Keep the semantic hidden attribute authoritative despite navigation display rules. */
+[hidden] { display: none !important; }

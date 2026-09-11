@@ -1,0 +1,5 @@
+.admin-form { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.admin-form label { display:grid; gap:5px; color:#b9c8da; font-size:12px; }
+.admin-form input,.admin-form select,.admin-form textarea { width:100%; padding:10px; border:1px solid #2a3d58; border-radius:8px; color:#edf4ff; background:#091827; font:inherit; }
+.admin-form textarea { min-height:82px; resize:vertical; }.admin-form .wide { grid-column:span 3; }.admin-section { margin-top:18px; }.admin-actions { display:flex; gap:8px; flex-wrap:wrap; align-items:end; }
+@media(max-width:768px){.admin-form{grid-template-columns:1fr 1fr}.admin-form .wide{grid-column:span 2}.admin-form label{font-size:11px}}

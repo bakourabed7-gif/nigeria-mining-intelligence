@@ -1,0 +1,38 @@
+@media (max-width: 900px) {
+  header { height: 60px; padding: 0 14px; gap: 10px; }
+  .brand { font-size: 15px; letter-spacing: -.01em; overflow: hidden; text-overflow: ellipsis; }
+  header nav[data-public] { gap: 2px; }
+  header nav[data-public] button { padding: 8px 9px; white-space: nowrap; }
+  main { padding: 20px 16px 92px; }
+  h1 { font-size: 27px; line-height: 1.15; }
+  .card { padding: 16px; }
+  .stats { gap: 10px; margin: 16px 0; }
+  .stat-card.card { min-height: 120px; }
+  .actions > button { min-height: 44px; }
+  .mobile-nav { min-height: 64px; align-items: center; padding-top: 8px; padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+  .mobile-nav button { min-height: 42px; padding: 9px 12px; }
+}
+
+@media (max-width: 768px) {
+  .table-wrap { overflow: visible; }
+  .table, .table tbody, .table tr, .table td { display: block; width: 100%; min-width: 0; }
+  .table thead { display: none; }
+  .table tbody { display: grid; gap: 12px; }
+  .table tr { padding: 14px; border: 1px solid #203149; border-radius: 12px; background: #091827; }
+  .table td { display: grid; grid-template-columns: minmax(88px, .45fr) 1fr; gap: 10px; padding: 7px 0; border: 0; text-align: left; overflow-wrap: anywhere; }
+  .table td::before { content: attr(data-label); color: #8ea1b9; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+  .table td:last-child { display: block; padding-top: 12px; }
+  .table td:last-child::before { display: none; }
+  .analyse-action { width: 100%; min-height: 46px; background: #17304d; color: #edf4ff; font-weight: 800; }
+}
+
+@media (max-width: 500px) {
+  header { height: 56px; padding: 0 12px; }
+  .brand { font-size: 13px; max-width: 48vw; }
+  header nav[data-public] button { padding: 7px 8px; font-size: 12px; }
+  main { padding: 16px 12px 92px; }
+  .hero { padding: 38px 20px; min-height: auto; }
+  .lead { font-size: 16px; }
+  .card { padding: 14px; }
+  .table td { grid-template-columns: 82px 1fr; }
+}

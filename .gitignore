@@ -1,5 +1,9 @@
 node_modules/
 .vercel/
 .env
-.env.local
+.env.*
+!.env.example
 coverage/
+.pnpm-store/
+
+.vercel

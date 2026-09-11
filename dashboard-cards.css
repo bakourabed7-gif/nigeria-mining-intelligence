@@ -1,0 +1,9 @@
+.stat-card.card {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .16s ease, transform .16s ease, background .16s ease;
+}
+.stat-card.card span { display: block; margin-top: 8px; color: #8ea1b9; font-size: 12px; }
+.stat-card.card:hover, .stat-card.card:focus-visible { background: #102238; border-color: #50d9a2; transform: translateY(-2px); }
