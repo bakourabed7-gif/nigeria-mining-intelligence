@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Nigeria Mining Intelligence Preview Test" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Preview-only Kwara GPS field-data integration test</name>
+    <desc>Not real field data. Do not save unless explicitly testing the Preview workflow.</desc>
+  </metadata>
+  <wpt lat="8.496600" lon="4.542100">
+    <ele>278.4</ele>
+    <time>2026-09-11T09:15:00Z</time>
+    <name>KWARA GPS TEST SITE</name>
+    <cmt>GPS-TEST-001</cmt>
+    <desc>Preview GPS integration test — not real field data</desc>
+    <src>GPS H1 Test Import</src>
+    <type>Gold</type>
+  </wpt>
+  <wpt lat="8.575000" lon="4.550400">
+    <ele>291.8</ele>
+    <time>2026-09-11T09:24:00Z</time>
+    <name>KWARA GPS TEST SITE</name>
+    <cmt>GPS-TEST-002</cmt>
+    <desc>Preview GPS integration test — not real field data</desc>
+    <src>GPS H1 Test Import</src>
+    <type>Gold</type>
+  </wpt>
+</gpx>
