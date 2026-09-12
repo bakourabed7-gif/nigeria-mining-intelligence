@@ -34,7 +34,7 @@ Nigeria Mining Intelligence is a Vercel-ready, source-aware Nigerian mining-titl
 
 New registrations are assigned the `free` role and plan. Passwords are bcrypt-hashed, while sessions use random opaque tokens: only a SHA-256 token digest is stored in PostgreSQL. The browser receives an `HttpOnly`, `SameSite=Lax`, production-`Secure` cookie; no credential or database secret reaches frontend code.
 
-Roles are `free`, `professional`, `investor`, and `admin`. Free accounts receive limited licence results and AI-score previews. Professional and Investor accounts unlock full analysis, reports, exports, saved opportunities, and due-diligence workflows. The admin-only source-health check remains protected. Payments and plan-change administration are intentionally out of scope for Phase 1.
+Roles are `free`, `professional`, `investor`, and `admin`. Free accounts receive a maximum three-result basic licence preview, map and official-source access, and qualitative potential labels rather than numeric AI scores. Professional (₦50,000/month or ₦500,000/year) unlocks full search, numeric scoring, analysis, reports, exports and saved opportunities. Investor (₦150,000/month or ₦1,500,000/year) adds advanced due diligence, comparison, risk, portfolio and investor-intelligence entitlements. Enterprise / Corporate is contact-only preparation for future multi-user, API and data-access offerings. The admin-only source-health check remains protected. Payments and plan-change administration are intentionally out of scope for Phase 1.
 
 The password-reset request endpoint and schema are present, but actual delivery must be connected to a transactional email provider before enabling reset emails.
 

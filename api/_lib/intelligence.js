@@ -8,6 +8,27 @@ function score(record) {
   if (record.source === 'IAISMP') value += 8;
   return Math.min(99, value);
 }
+function potentialLabel(value) {
+  const numeric = Number(value);
+  if (numeric >= 85) return 'High Potential';
+  if (numeric >= 70) return 'Medium Potential';
+  return 'Lower Potential';
+}
+function freePreview(record) {
+  return {
+    id: record.id,
+    licence_no: record.licence_no,
+    operator: record.operator,
+    state: record.state,
+    lga: record.lga,
+    commodities: record.commodities,
+    status: record.status,
+    potential_label: potentialLabel(record.ai_score ?? score(record))
+  };
+}
+function freeSearchResults(results, limit = 3) {
+  return results.slice(0, limit).map(freePreview);
+}
 
 function search(records, filters = {}) {
   const normalise = (value) => String(value || '').trim().toLowerCase();
@@ -36,4 +57,4 @@ function analysis(record) {
   return { licence: record.licence_no, operator: record.operator, score: value, decision: value >= 85 ? 'Advance to diligence' : value >= 70 ? 'Screen further' : 'Hold', strengths, risks, actions, provenance: { source: record.source, source_url: record.source_url, verified_at: record.verified_at } };
 }
 
-module.exports = { analysis, score, search };
+module.exports = { analysis, freePreview, freeSearchResults, potentialLabel, score, search };

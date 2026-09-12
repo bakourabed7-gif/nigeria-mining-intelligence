@@ -6,6 +6,11 @@ const COOKIE = 'nmi_session';
 const SESSION_DAYS = 30;
 const roles = new Set(['free', 'professional', 'investor', 'admin']);
 const premiumRoles = new Set(['professional', 'investor', 'admin']);
+const entitlements = Object.freeze({
+  free: Object.freeze({ fullSearch: false, numericAiScore: false, fullAnalysis: false, reports: false, savedOpportunities: false, exports: false, dueDiligence: false }),
+  professional: Object.freeze({ fullSearch: true, numericAiScore: true, fullAnalysis: true, reports: true, savedOpportunities: true, exports: true, dueDiligence: true }),
+  investor: Object.freeze({ fullSearch: true, numericAiScore: true, fullAnalysis: true, reports: true, savedOpportunities: true, exports: true, dueDiligence: true, advancedDueDiligence: true, opportunityComparison: true, advancedRiskFlags: true, investorReports: true, portfolioScreening: true, investorIntelligence: true })
+});
 
 function parseCookies(header = '') { return Object.fromEntries(header.split(';').map((item) => item.trim().split('=').map(decodeURIComponent)).filter(([key]) => key)); }
 function tokenHash(token) { return crypto.createHash('sha256').update(token).digest('hex'); }
@@ -13,6 +18,7 @@ function normaliseEmail(email) { return String(email || '').trim().toLowerCase()
 function validPassword(password) { return typeof password === 'string' && password.length >= 12 && password.length <= 128; }
 function publicUser(user) { return { id: user.id, email: user.email, role: user.role, plan: user.plan_id || user.plan || user.role, created_at: user.created_at }; }
 function isPremium(user) { return premiumRoles.has(user.role); }
+function entitlementsFor(user) { return entitlements[user?.role] || (user?.role === 'admin' ? entitlements.investor : entitlements.free); }
 function isAdmin(user) { return user?.role === 'admin'; }
 function isConfiguredOwner(user) { const ownerEmail = normaliseEmail(process.env.NMI_OWNER_EMAIL); return Boolean(ownerEmail && normaliseEmail(user?.email) === ownerEmail); }
 
@@ -75,4 +81,4 @@ async function requireUser(req, res) {
 async function destroySession(req, res) { const token = parseCookies(req.headers.cookie)[COOKIE]; if (token && poolAvailable()) await requireDatabase().query('DELETE FROM sessions WHERE token_hash = $1', [tokenHash(token)]); clearSessionCookie(res); }
 function poolAvailable() { return Boolean(process.env.DATABASE_URL || process.env.POSTGRES_URL); }
 
-module.exports = { createSession, createUser, currentUser, destroySession, isAdmin, isConfiguredOwner, isPremium, premiumRoles, promoteOwnerIfConfigured, publicUser, requireUser, roles, verifyUser };
+module.exports = { createSession, createUser, currentUser, destroySession, entitlements, entitlementsFor, isAdmin, isConfiguredOwner, isPremium, premiumRoles, promoteOwnerIfConfigured, publicUser, requireUser, roles, verifyUser };
