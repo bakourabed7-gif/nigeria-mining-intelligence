@@ -131,3 +131,48 @@ CREATE TABLE IF NOT EXISTS gps_field_points (
 );
 CREATE INDEX IF NOT EXISTS gps_field_points_coordinates_idx ON gps_field_points(latitude, longitude);
 CREATE INDEX IF NOT EXISTS gps_field_points_verification_status_idx ON gps_field_points(verification_status);
+
+CREATE TABLE IF NOT EXISTS mining_title_polygons (
+  id UUID PRIMARY KEY,
+  licence_no TEXT NOT NULL,
+  licence_no_normalized TEXT NOT NULL UNIQUE,
+  licence_type TEXT,
+  licence_holder TEXT NOT NULL,
+  state TEXT,
+  lga TEXT,
+  commodities JSONB NOT NULL DEFAULT '[]'::jsonb,
+  status TEXT NOT NULL DEFAULT 'pending',
+  issue_date DATE,
+  expiry_date DATE,
+  area_m2 DOUBLE PRECISION,
+  geometry JSONB NOT NULL,
+  official_source TEXT NOT NULL,
+  source_url TEXT,
+  dataset_date DATE NOT NULL,
+  last_verified_at DATE,
+  verification_status TEXT NOT NULL DEFAULT 'pending' CHECK (verification_status IN ('pending', 'verified', 'rejected')),
+  overlap_flag BOOLEAN NOT NULL DEFAULT FALSE,
+  created_by UUID REFERENCES users(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS mining_title_polygons_licence_idx ON mining_title_polygons(licence_no_normalized);
+CREATE INDEX IF NOT EXISTS mining_title_polygons_verification_idx ON mining_title_polygons(verification_status);
+
+ALTER TABLE gps_field_points ADD COLUMN IF NOT EXISTS title_intelligence JSONB NOT NULL DEFAULT '{}'::jsonb;
+ALTER TABLE gps_field_points ADD COLUMN IF NOT EXISTS title_checked_at TIMESTAMPTZ;
+
+CREATE TABLE IF NOT EXISTS gps_title_check_history (
+  id UUID PRIMARY KEY,
+  gps_point_id UUID NOT NULL REFERENCES gps_field_points(id) ON DELETE CASCADE,
+  latitude DOUBLE PRECISION NOT NULL,
+  longitude DOUBLE PRECISION NOT NULL,
+  matched_title_id UUID REFERENCES mining_title_polygons(id) ON DELETE SET NULL,
+  matched_licence_no TEXT,
+  dataset_date DATE,
+  source TEXT,
+  checked_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  result TEXT NOT NULL CHECK (result IN ('match', 'no_match', 'conflict_review_required')),
+  verification_status TEXT NOT NULL DEFAULT 'pending' CHECK (verification_status IN ('pending', 'verified', 'rejected'))
+);
+CREATE INDEX IF NOT EXISTS gps_title_check_history_point_idx ON gps_title_check_history(gps_point_id, checked_at DESC);

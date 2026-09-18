@@ -8,6 +8,9 @@ const expected = {
   saved_licences: ['user_id', 'licence_id', 'created_at'],
   reports: ['id', 'user_id', 'licence_id', 'created_at'],
   analysis_history: ['id', 'user_id', 'licence_id', 'score', 'created_at']
+  ,mining_title_polygons: ['id', 'licence_no', 'licence_no_normalized', 'licence_holder', 'geometry', 'official_source', 'dataset_date', 'verification_status']
+  ,gps_field_points: ['id', 'point_hash', 'title_intelligence', 'title_checked_at']
+  ,gps_title_check_history: ['id', 'gps_point_id', 'latitude', 'longitude', 'result', 'checked_at', 'verification_status']
 };
 
 async function audit() {
